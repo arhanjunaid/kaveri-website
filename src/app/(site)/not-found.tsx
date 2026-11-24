@@ -1,0 +1,2 @@
+import Link from "next/link";
+export default function NotFound() { return <section className="subpage"><div className="wrap"><span className="eyebrow">Page not found</span><h1>Let’s get you<br/><em>back on track.</em></h1><p className="subpage-lead">The page may have moved. We’re still here if you need a hand.</p><Link className="button button-dark" href="/">Back to home <span>→</span></Link></div></section>; }

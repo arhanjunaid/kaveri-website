@@ -1,0 +1,3 @@
+import type { Metadata } from "next";
+export const metadata: Metadata = { title: "Careers" };
+export default function CareersPage() { return <section className="subpage"><div className="wrap"><span className="eyebrow">Careers at Kaveri</span><h1>Make care<br/><em>your calling.</em></h1><p className="subpage-lead">We’re building a team of thoughtful people who believe every patient deserves great care.</p><div className="contact-card career-card"><h2>Want to join us?</h2><p>Tell us about yourself and the kind of work you’re looking for.</p><a className="button button-dark" href="mailto:kaverihealthtech@gmail.com">Email your introduction <span>→</span></a></div></div></section>; }

@@ -1,0 +1,3 @@
+import type { Metadata } from "next";
+export const metadata: Metadata = { title: "Privacy policy" };
+export default function PrivacyPage() { return <section className="subpage"><div className="wrap legal-copy"><span className="eyebrow">Your information</span><h1>Privacy, with<br/><em>respect.</em></h1><p className="subpage-lead">We respect your privacy. When you contact us, we use the information you share only to respond to your request and coordinate care.</p><h2>Contact</h2><p>For questions about your information, email <a href="mailto:kaverihealthtech@gmail.com">kaverihealthtech@gmail.com</a>.</p></div></section>; }

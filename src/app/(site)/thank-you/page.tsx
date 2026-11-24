@@ -1,0 +1,2 @@
+import Link from "next/link";
+export default function ThankYouPage() { return <section className="subpage"><div className="wrap"><span className="eyebrow">Thank you</span><h1>We’re glad<br/><em>you reached out.</em></h1><p className="subpage-lead">Your message is ready in your email app. We look forward to speaking with you.</p><Link className="button button-dark" href="/">Back to home <span>→</span></Link></div></section>; }
