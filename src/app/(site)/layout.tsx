@@ -1,13 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
 import { MobileMenu } from "@/components/site/MobileMenu";
+import { SiteNavLinks } from "@/components/site/SiteNavLinks";
 import { PhoneNumbers } from "@/components/site/PhoneNumbers";
 import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 
 const links = [{ href: "/", label: "Home" }, { href: "/services", label: "Our services" }, { href: "/about", label: "About us" }, { href: "/locations", label: "Locations" }, { href: "/contact", label: "Contact" }];
 
 function Header() {
-  return <header className="site-header"><div className="wrap nav-inner"><Link href="/" className="brand" aria-label="Kaveri HealthTech home"><Image src="/uploads/seed/logo-2.png" alt="Kaveri HealthTech" width={224} height={80} unoptimized className="brand-logo" /></Link><nav className="desktop-nav" aria-label="Main navigation">{links.map(item=><Link key={item.href} href={item.href}>{item.label}</Link>)}</nav><PhoneNumbers className="phone-pair--header"/><MobileMenu items={links}/></div></header>;
+  return <header className="site-header"><div className="wrap nav-inner"><Link href="/" className="brand" aria-label="Kaveri HealthTech home"><Image src="/uploads/seed/logo-2.png" alt="Kaveri HealthTech" width={224} height={80} unoptimized className="brand-logo" /></Link><SiteNavLinks items={links}/><PhoneNumbers className="phone-pair--header"/><MobileMenu items={links}/></div></header>;
 }
 
 function Footer() {
