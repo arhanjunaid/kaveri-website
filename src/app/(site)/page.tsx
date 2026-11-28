@@ -11,13 +11,21 @@ const hospitalPartners = [
   { name: "Narayana Peripheral", logo: "https://pimwp.s3-accelerate.amazonaws.com/2022/10/narayana-health-logo-vector.png" },
   { name: "Karunashraya", logo: "/images/partners/karunashraya.svg" },
 ];
-const featuredServiceSlugs = new Set(["road-ambulance", "hospital-patient-transfer", "air-ambulance", "train-ambulance", "repatriation", "divine-farewell", "corporate-industrial-ambulance", "occupational-health-centre", "event-medical-support"]);
+const featuredServiceSlugs = new Set(["road-ambulance", "hospital-patient-transfer", "air-ambulance", "train-ambulance", "repatriation", "divine-farewell", "corporate-industrial-ambulance", "occupational-health-centre", "event-medical-support", "in-house-ambulance-garage"]);
 
 export default function HomePage() {
   return <>
+    <section className="staff-marquee" role="region" aria-label="24/7 medical response team">
+      <div className="staff-marquee-track">
+        {[0, 1].map((copy) => <div className="staff-marquee-group" key={copy} aria-hidden={copy === 1 ? "true" : undefined}>
+          <span>24/7 On-call Doctors</span><i aria-hidden="true">✦</i><span>EMTs &amp; Paramedics</span><i aria-hidden="true">✦</i><span>Helpers</span><i aria-hidden="true">✦</i>
+        </div>)}
+      </div>
+    </section>
     <section className="hero hero-corporate">
       <div className="wrap corporate-hero-grid">
         <div className="corporate-hero-copy">
+          <span className="home-live-label"><i aria-hidden="true"/>24/7 LIVE</span>
           <span className="eyebrow"><i/>Kaveri HealthTech Pvt. Ltd.</span>
           <h1>Care that moves<br/><em>when you need it.</em></h1>
           <p>24/7 ambulance, patient transport and family support services, backed by a coordinated team.</p>
@@ -28,12 +36,16 @@ export default function HomePage() {
           <div className="photo-badge"><span className="photo-badge-mark">✚</span><span><b>Emergency response</b><small>Available 24 hours</small></span></div>
         </div>
       </div>
-      <div className="corporate-proof"><div className="wrap corporate-proof-grid"><div><strong>Since 2005</strong><span>emergency care and logistics</span></div><div><strong>104</strong><span>self-owned ambulances</span></div><div><strong>2,000+</strong><span>partner ambulances</span></div><div><strong>136+</strong><span>cities covered</span></div></div></div>
+      <div className="corporate-proof"><div className="wrap corporate-proof-grid"><div><strong>25 years</strong><span>established in 1999</span></div><div><strong>104</strong><span>self-owned ambulances</span></div><div><strong>2,000+</strong><span>partner ambulances</span></div><div><strong>136+</strong><span>cities covered</span></div></div></div>
     </section>
 
     <section className="section services-section corporate-services"><div className="wrap"><div className="section-heading"><div><span className="eyebrow">Our services</span><h2>One team.<br/><em>More ways to help.</em></h2></div><Link className="button button-outline" href="/services">View all services <span>↗</span></Link></div><div className="service-grid corporate-service-grid">{services.filter((service)=>featuredServiceSlugs.has(service.slug)).map((service,i)=><Link href={`/services/${service.slug}`} className="service-card" key={service.slug}><div className="home-service-photo"><Image src={service.image} alt={service.imageAlt} fill unoptimized sizes="(max-width: 640px) 100vw, 25vw"/><span>{String(i+1).padStart(2,"0")}</span></div><div className="home-service-copy"><h3>{service.title}</h3><p>{service.category}</p><span className="service-arrow">↗</span></div></Link>)}</div></div></section>
 
-    <section className="client-strip"><div className="wrap"><div className="client-strip-heading"><span className="eyebrow">Partnered hospitals</span><p>Working with healthcare partners across the region.</p></div><div className="partner-logo-grid">{hospitalPartners.map((partner)=><div className="partner-logo-card" key={partner.name}><Image src={partner.logo} alt={`${partner.name} logo`} width={220} height={100} unoptimized /></div>)}</div></div></section>
+    <section className="client-strip"><div className="wrap"><div className="client-strip-heading"><span className="eyebrow">Partnered hospitals</span><p>Working with healthcare partners across the region.</p></div></div><div className="partner-logo-marquee" role="region" aria-label="Partnered hospitals">
+      <div className="partner-logo-track">
+        {[0, 1].map((copy) => <div className="partner-logo-group" key={copy} aria-hidden={copy === 1 ? "true" : undefined}>{hospitalPartners.map((partner)=><div className="partner-logo-card" key={`${copy}-${partner.name}`}><Image src={partner.logo} alt={copy === 0 ? `${partner.name} logo` : ""} width={220} height={100} unoptimized /></div>)}</div>)}
+      </div>
+    </div></section>
 
     <section className="corporate-story"><div className="wrap corporate-story-grid"><div className="corporate-story-photo"><Image src="/uploads/seed/resource/kaveri-team-meeting.jpeg" alt="Kaveri HealthTech team coordinating services" fill unoptimized sizes="(max-width: 640px) 100vw, 50vw"/><span>People and readiness, working together</span></div><div className="corporate-story-copy"><span className="eyebrow">A coordinated care partner</span><h2>Support for urgent moments<br/>and <em>everyday operations.</em></h2><p>From emergency response to workplace health and event support, Kaveri helps organizations and families coordinate the care they need.</p><ul className="corporate-capabilities"><li>Live GPS tracking</li><li>Seamless patient transfers</li><li>Custom solutions for organizations</li></ul><div className="story-actions"><Link className="button button-dark" href="/contact">Talk to our team <span>→</span></Link><a className="story-email" href="mailto:kaverihealthtech@gmail.com">kaverihealthtech@gmail.com</a></div></div></div></section>
 

@@ -5,7 +5,7 @@ import { SiteNavLinks } from "@/components/site/SiteNavLinks";
 import { PhoneNumbers } from "@/components/site/PhoneNumbers";
 import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 
-const links = [{ href: "/", label: "Home" }, { href: "/services", label: "Our services" }, { href: "/about", label: "About us" }, { href: "/locations", label: "Locations" }, { href: "/contact", label: "Contact" }];
+const links = [{ href: "/", label: "Home" }, { href: "/services", label: "Our services" }, { href: "/about", label: "About us" }, { href: "/gallery", label: "Gallery" }, { href: "/locations", label: "Locations" }, { href: "/contact", label: "Contact" }];
 
 function Header() {
   return <header className="site-header"><div className="wrap nav-inner"><Link href="/" className="brand" aria-label="Kaveri HealthTech home"><Image src="/uploads/seed/logo-2.png" alt="Kaveri HealthTech" width={224} height={80} unoptimized className="brand-logo" /></Link><SiteNavLinks items={links}/><PhoneNumbers className="phone-pair--header"/><MobileMenu items={links}/></div></header>;
